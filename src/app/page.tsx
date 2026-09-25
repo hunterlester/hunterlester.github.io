@@ -7,7 +7,7 @@ export default function Home() {
       <section className="hero">
         <p className="eyebrow">Full-Stack / Product Engineer</p>
 
-        <h1>Guilford Hunter Benevedes</h1>
+        <h1>Guilford Hunter Lester Benevedes</h1>
 
         <p className="hero-intro">
           I build software at the intersection of product requirements,

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Guilford Hunter Benevedes | Software Engineer",
+  title: "Guilford Hunter Lester Benevedes | Software Engineer",
   description:
     "Full-stack product engineer exploring software, AI, and human-centered systems.",
 };
@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   <header className="site-header">
     <div className="site-header-inner">
       <a className="site-name" href="/">
-        Guilford Hunter Benevedes
+        Guilford Hunter Lester Benevedes
       </a>
 
       <nav className="site-nav">
