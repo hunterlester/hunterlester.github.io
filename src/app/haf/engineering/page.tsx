@@ -11,8 +11,8 @@ export default function EngineeringPage() {
   const content = fs.readFileSync(filePath, "utf8");
 
   return <HafDocument content={content} next={{
-      title: "Design Foundations",
-      href: "/haf/foundations", 
+      title: "Experimental Findings",
+      href: "/haf/findings", 
   }} />;
 }
 

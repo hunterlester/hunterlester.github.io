@@ -251,6 +251,18 @@ Person`}
           </p>
         <a href="/haf/engineering">Read Engineering Review →</a>
         </article>
+
+        <article className="document-card">
+          <p className="eyebrow">04</p>
+          <h3>Experimental Findings</h3>
+          <p>
+            Findings from testing HAF's requirements through concrete advocacy
+            events, including tensions around deliberation, interaction,
+            proportionality, context, and constitutional enforcement.
+          </p>
+          <a href="/haf/findings">Read Experimental Findings →</a>
+        </article>
+
       </div>
       </section>
 
@@ -258,14 +270,15 @@ Person`}
         <h2>Status</h2>
 
         <p>
-          <strong>Current phase:</strong> Design → Prototype
+          <strong>Current phase:</strong> Prototype → Experiment
         </p>
-
+        
         <p>
-          The design foundations and scenario analysis establish the initial
-          requirements. The next step is a small advocacy-session prototype
-          intended to test the architectural assumptions rather than
-          demonstrate a finished implementation.
+          The initial prototype is now being used to test HAF's requirements
+          against concrete advocacy scenarios. These experiments are exposing
+          tensions between the framework's requirements, their interpretation
+          by foundation models, and the architecture needed to preserve human
+          agency.
         </p>
       </section>
 
