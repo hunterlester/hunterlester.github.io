@@ -168,55 +168,57 @@ export default function HafPage() {
       </section>
 
       <section>
-        <h2>Current Engineering Proposal</h2>
-
+        <h2>Current Engineering Direction</h2>
+      
         <p>
-          The current engineering question is how much of HAF's behavior
-          can be established through conventional software architecture
-          around a foundation model, and which requirements depend upon
-          model behavior, evaluation, or techniques I have not yet explored.
+          Experiments with the initial HAF runtime exposed a distinction between
+          deliberating about an advocacy situation and interacting with the person.
+          A foundation model may need substantial context and reasoning to understand
+          a situation without presenting all of that reasoning to the person at once.
         </p>
-
+      
         <pre>
-          {`Person
-   │
-   ▼
-Advocacy Session
-   │
-   ├── Context / Authority
-   ├── Evidence / Provenance
-   └── HAF Constitution
-   │
-   ▼
-Model Adapter
-   │
-   ▼
-Foundation Model
-   │
-   ▼
-Evaluation
-   │
-   ▼
-Person`}
+          {`Person / Environment
+              │
+              ▼
+      Advocacy Session
+              │
+              ├── Constitutional Context
+              ├── Authority / Permissions
+              ├── Session History
+              └── External Evidence
+              │
+              ▼
+      Deliberation
+              │
+              ▼
+      Determine Next Act of Advocacy
+              │
+              ▼
+      Person`}
         </pre>
-
+      
         <p>
-          One of the central hypotheses is that the foundation model should
-          be an instrument used by HAF rather than the source of HAF's
-          constitutional authority.
+          The current architecture therefore treats advocacy as an ongoing
+          interaction rather than a single request that produces a complete answer.
+          Depending on the situation, the next useful act might be a question, a
+          distinction, a piece of evidence, a challenge, an explanation, or a
+          recommendation.
         </p>
-
+      
         <p>
-          Some constraints can potentially be enforced through ordinary
-          software. For example, unauthorized personal context can simply
-          never be supplied to the model.
+          The current persistence hypothesis is deliberately conservative: preserve
+          a faithful session history and allow the foundation model to interpret that
+          history during deliberation. More structured session state, retrieval, or
+          summarization should be introduced when experiments demonstrate that they
+          are necessary.
         </p>
-
+      
         <p>
-          Other requirements, such as avoiding subtle manipulation or
-          reliably distinguishing warranted inference from speculation,
-          raise questions about model behavior and evaluation that remain
-          open.
+          The foundation model remains an instrument used by HAF rather than the
+          source of HAF's constitutional authority. Constraints such as permissions
+          may require enforcement outside the model rather than relying on the model
+          to reconstruct them from conversation history.
         </p>
       </section>
 
@@ -262,45 +264,66 @@ Person`}
           </p>
           <a href="/haf/findings">Read Experimental Findings →</a>
         </article>
+ 
+        <article className="document-card">
+          <p className="eyebrow">05</p>
+          <h3>Interaction &amp; Session Architecture</h3>
+          <p>
+            An engineering review of how HAF can maintain rich internal
+            deliberation while interacting proportionately with a person across
+            an evolving advocacy session.
+          </p>
+          <a href="/haf/interaction-session">
+            Read Interaction &amp; Session Architecture →
+          </a>
+        </article>
 
       </div>
       </section>
 
       <section>
         <h2>Status</h2>
-
+      
         <p>
-          <strong>Current phase:</strong> Prototype → Experiment
+          <strong>Current phase:</strong> Multi-turn advocacy experiments
         </p>
-        
+      
         <p>
-          The initial prototype is now being used to test HAF's requirements
-          against concrete advocacy scenarios. These experiments are exposing
-          tensions between the framework's requirements, their interpretation
-          by foundation models, and the architecture needed to preserve human
-          agency.
+          The initial HAF runtime has been tested against concrete advocacy
+          scenarios. Those experiments exposed new architectural questions about
+          proportional interaction, session persistence, model context, and the
+          distinction between internal deliberation and the next act of advocacy.
+        </p>
+      
+        <p>
+          The next experiments will test how HAF maintains an evolving advocacy
+          session across multiple interactions with a person.
         </p>
       </section>
-
+      
       <section>
         <h2>Questions I'm Investigating</h2>
-
+      
         <ul>
           <li>
-            Which constitutional constraints should be enforced outside the
-            foundation model?
+            Can a foundation model maintain a faithful understanding of an evolving
+            advocacy session from the preserved session history?
           </li>
           <li>
-            How should generated claims retain meaningful provenance?
-          </li>
-          <li>What constitutes a HAF-compatible model?</li>
-          <li>
-            Can a common evaluation suite measure behavior across different
-            foundation models?
+            What information must remain available across an advocacy session, and
+            what does a particular model invocation actually need?
           </li>
           <li>
-            Which requirements require techniques beyond conventional
-            application architecture?
+            When is previous deliberation sufficient, and when should HAF deliberate
+            again?
+          </li>
+          <li>
+            How should HAF determine the next appropriate act of advocacy without
+            performing too much of the person's deliberation for them?
+          </li>
+          <li>
+            Which responsibilities, particularly authority and permissions, require
+            architectural enforcement outside the foundation model?
           </li>
         </ul>
       </section>

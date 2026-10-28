@@ -14,8 +14,8 @@ export default function FindingsPage() {
     <HafDocument
       content={content}
       next={{
-        title: "Design Foundations",
-        href: "/haf/foundations",
+        title: "Interaction & Session Architecture",
+        href: "/haf/interaction-session",
       }}
     />
   );

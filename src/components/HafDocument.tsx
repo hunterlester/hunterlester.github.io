@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import rehypeSlug from "rehype-slug";
+import GithubSlugger from "github-slugger";
 
 interface DocumentLink {
   title: string;
@@ -25,13 +26,6 @@ function cleanHeading(title: string) {
     .trim();
 }
 
-function slugifyHeading(title: string) {
-  return cleanHeading(title)
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-");
-}
-
 function getDocumentTitle(content: string) {
   const titleLine = content
     .split("\n")
@@ -55,6 +49,8 @@ function removeDocumentTitle(content: string) {
 }
 
 function getTableOfContents(content: string): TocItem[] {
+  const slugger = new GithubSlugger();
+
   return content
     .split("\n")
     .filter((line) => /^##\s+/.test(line))
@@ -63,7 +59,7 @@ function getTableOfContents(content: string): TocItem[] {
 
       return {
         title,
-        id: slugifyHeading(title),
+        id: slugger.slug(title),
       };
     });
 }
